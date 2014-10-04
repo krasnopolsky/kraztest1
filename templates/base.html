@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Flask Index</title>
+		<meta name="viewport" content="width-device-width, initial-scale=1.0">
+		<link rel="stylesheet" media="screen" href="static/bootstrap.min.css">
+	</head>
+	<body>
+		
+		<div class="container">
+
+
+			<!-- Child Template -->
+			{% block content %}{% endblock %}
+
+			<!-- errors -->
+			{% if error %}
+				<p class="error"><strong>Error:</strong> {{ error }}</p>
+			{% endif %}
+
+			<!-- messages -->
+			{% for message in get_flashed_messages() %}
+				{{ message }}
+			{% endfor %}
+		</div>
+
+	</body>
+</html>

@@ -48,6 +48,11 @@ def login():
 			return redirect(url_for('home'))
 	return render_template('login.html', error=error)
 
+@app.route('/jquery')
+@login_required
+def jquery():
+	return render_template('jquery.html')
+
 @app.route('/logout')
 @login_required
 def logout():

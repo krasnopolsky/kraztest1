@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>D3 Experimentation Page</h1>
+
+
+	<script type="text/javascript">
+
+
+	var w = 500;
+	var h = 100;
+	var barPadding = 5;
+
+	var dataset = [5, 10, 15, 20, 25, 30, 45, 50];
+	
+
+
+	d3.select("body").selectAll("div")
+		.data(dataset)
+		.enter()
+		.append("div")
+		.attr("class", "bar")
+		.style("height", function(d) {
+			var barHeight = d * 5;
+			return barHeight + "px";
+		});
+
+	var svg = d3.select("body").append("svg")
+				.attr("width", w)
+				.attr("height",h);
+
+	svg.selectAll("rect")
+		.data(dataset)
+		.enter()
+		.append("rect")
+		.attr("x",function(d,i) {
+			return i * (w / dataset.length);
+		})
+		.attr("y",function(d) {
+			return h - d;
+		})
+		.attr("width",w / dataset.length - barPadding)
+		.attr("height", function(d) {
+			return d * 4;
+		})
+		.attr("fill", function(d) {
+			return "rgb(0,0, " + (d * 10) + ")";
+		});
+		
+
+	</script>
+	
+	<svg width="500" height="100">
+		<circle cx="250" cy="50" r="25"
+		fill = "blue" stroke="orange" stroke-width="10"/>		
+	</svg>
+
+
+
+	<p>Testing!</p>
+
+{% endblock %}

@@ -4,5 +4,30 @@
 	background-color: black;
 	height: 100px;
 	width: 100px;
+	display: inline-block;
+	float: right;
+	margin: 20px 20px 20px 20px;
+}
 
+#force {
+	height: 100px;
+	width: 100px;
+	background-color: blue;
+	float: right;
+	display: inline-block;
+	margin: 20px 20px 20px 20px;
+}
+
+#decks {
+	bottom: 0;
+	right:0;
+	position: absolute;
+}
+
+div.bar {
+	display: inline-block;
+	width: 20px;
+	height: 75px;
+	background-color: teal;
+	margin-right: 2px;
 }

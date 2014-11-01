@@ -53,6 +53,12 @@ def login():
 def jquery():
 	return render_template('jquery.html')
 
+
+@app.route('/d3test')
+@login_required
+def d3test():
+	return render_template('d3test.html')	
+
 @app.route('/logout')
 @login_required
 def logout():
